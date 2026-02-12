@@ -1,0 +1,103 @@
+/*--------------------------------------------------------------
+TEAM Carousel
+----------------------------------------------------------------
+# Team Carousel
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+TEAM GRID
+----------------------------------------------------------------
+# Team Grid
+--------------------------------------------------------------*/
+.pxl-team-grid1,.pxl-team-carousel1 {
+	.pxl-swiper-arrow-wrap {
+		.pxl-swiper-arrow {
+			width: 50px;
+			height: 117px;
+			background-color: #fff;
+			color: $primary_color;
+			opacity: 1;
+			@media (max-width: 1500px) {
+				height: 50px;
+			}
+			&:hover {
+				opacity: .5;
+			}
+		}
+	}
+	.pxl-item--inner {
+		position: relative;
+		&:hover {
+			.pxl-item--image {
+				img {
+					transform: scale(1.05) rotate(2deg);
+				}
+			}
+		}
+		.pxl-item--image {
+			position: relative;
+			overflow: hidden;
+			border-radius: 10px;
+			img {
+				position: relative;
+				@include transition(all .25s cubic-bezier(.645,.045,.355,1));
+				z-index: 1;
+			}
+			&:after {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				@include transition(all .25s cubic-bezier(.645,.045,.355,1));
+				width: 100%;
+				height: 0;
+				background-color: $primary_color;
+			}
+		}
+		.pxl-item--holder {
+			position: absolute;
+			left: 10px;
+			right: 10px;
+			bottom: 10px;
+			padding: 12.5px 16px;
+			z-index: 1;
+			border-radius: 10px;
+			background: #fff;
+		}
+		.pxl-item--title {
+			text-transform: capitalize;
+			margin-bottom: 4px;
+			font-size: 16px;
+			font-weight: 500;
+		}
+		.pxl-item--position {
+			@include transition(.3s linear);
+			font-family: Rubik;
+			font-weight: 400;
+			font-size: 14px;
+		}
+		.pxl-social {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			@include transition(.3s linear);
+			right: 16px;
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+			a {
+				color: $four_color;
+				font-size: 18px;
+				width: 48px;
+				height: 48px;
+				background-color: rgba(244, 244, 244, 1);
+				border-radius: 48px;
+				&:hover {
+					background-color: $four_color;
+					color: #fff;
+				}
+			}
+		}
+	}
+}

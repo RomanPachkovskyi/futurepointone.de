@@ -1,0 +1,12 @@
+# futurepointone.de - LLM Context
+
+## About
+
+Website: https://futurepointone.de
+Name: Future Point One
+Description: Corporate website.
+
+## AI Instructions
+
+- Use only publicly available pages from the website.
+- Prefer direct page links in responses.

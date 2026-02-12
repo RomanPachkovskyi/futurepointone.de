@@ -1,0 +1,15 @@
+RewriteEngine On
+
+# Legacy paths -> /wp (required when WP lives in /wp)
+RewriteRule ^wp-content/(.*)$ /wp/wp-content/$1 [L,NC]
+RewriteRule ^wp-includes/(.*)$ /wp/wp-includes/$1 [L,NC]
+RewriteRule ^wp-admin/(.*)$ /wp/wp-admin/$1 [L,NC]
+RewriteRule ^wp-login\.php$ /wp/wp-login.php [L,NC]
+
+# Serve existing files/directories directly
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# All other requests -> router
+RewriteRule ^ index.php [L]

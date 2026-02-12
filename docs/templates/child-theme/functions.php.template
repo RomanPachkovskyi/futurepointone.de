@@ -1,0 +1,99 @@
+<?php
+/**
+ * {{PROJECT_NAME}} Theme
+ *
+ * @package {{PROJECT_NAME}}
+ * @author {{AUTHOR}}
+ * @version {{VERSION}}
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+// Define theme constants.
+define( '{{PROJECT_PREFIX_UPPER}}_CHILD_VERSION', '{{VERSION}}' );
+define( '{{PROJECT_PREFIX_UPPER}}_CHILD_DIR', get_stylesheet_directory() );
+define( '{{PROJECT_PREFIX_UPPER}}_CHILD_URI', get_stylesheet_directory_uri() );
+
+/**
+ * Cache busting helper.
+ *
+ * Development mode: використовує filemtime для автоматичного оновлення.
+ * Production mode: використовує версію теми.
+ */
+function {{PROJECT_PREFIX}}_get_asset_version( $relative_path ) {
+	if ( defined( 'WP_DEBUG' ) && WP_DEBUG && defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) {
+		$full_path = {{PROJECT_PREFIX_UPPER}}_CHILD_DIR . $relative_path;
+		if ( file_exists( $full_path ) ) {
+			return filemtime( $full_path );
+		}
+	}
+
+	return {{PROJECT_PREFIX_UPPER}}_CHILD_VERSION;
+}
+
+/**
+ * Enqueue theme styles and scripts.
+ */
+function {{PROJECT_PREFIX}}_enqueue_assets() {
+	// Main theme stylesheet
+	wp_enqueue_style(
+		'{{PROJECT_SLUG}}-style',
+		get_stylesheet_uri(),
+		array( '{{PARENT_THEME}}-frontend' ),
+		{{PROJECT_PREFIX}}_get_asset_version( '/style.css' )
+	);
+
+	// Custom CSS
+	wp_enqueue_style(
+		'{{PROJECT_PREFIX}}-custom-style',
+		{{PROJECT_PREFIX_UPPER}}_CHILD_URI . '/assets/css/custom.css',
+		array( '{{PROJECT_SLUG}}-style' ),
+		{{PROJECT_PREFIX}}_get_asset_version( '/assets/css/custom.css' )
+	);
+
+	// Custom JavaScript
+	wp_enqueue_script(
+		'{{PROJECT_PREFIX}}-custom-script',
+		{{PROJECT_PREFIX_UPPER}}_CHILD_URI . '/assets/js/custom.js',
+		array( 'jquery', '{{PARENT_THEME}}-frontend' ),
+		{{PROJECT_PREFIX}}_get_asset_version( '/assets/js/custom.js' ),
+		true
+	);
+}
+add_action( 'wp_enqueue_scripts', '{{PROJECT_PREFIX}}_enqueue_assets', 20 );
+
+/**
+ * Enqueue admin panel assets.
+ */
+function {{PROJECT_PREFIX}}_admin_enqueue() {
+	// Admin CSS
+	if ( file_exists( {{PROJECT_PREFIX_UPPER}}_CHILD_DIR . '/assets/css/admin.css' ) ) {
+		wp_enqueue_style(
+			'{{PROJECT_PREFIX}}-admin-style',
+			{{PROJECT_PREFIX_UPPER}}_CHILD_URI . '/assets/css/admin.css',
+			array(),
+			{{PROJECT_PREFIX}}_get_asset_version( '/assets/css/admin.css' )
+		);
+	}
+
+	// Admin JavaScript
+	if ( file_exists( {{PROJECT_PREFIX_UPPER}}_CHILD_DIR . '/assets/js/admin.js' ) ) {
+		wp_enqueue_script(
+			'{{PROJECT_PREFIX}}-admin-script',
+			{{PROJECT_PREFIX_UPPER}}_CHILD_URI . '/assets/js/admin.js',
+			array( 'jquery' ),
+			{{PROJECT_PREFIX}}_get_asset_version( '/assets/js/admin.js' ),
+			true
+		);
+	}
+}
+add_action( 'admin_enqueue_scripts', '{{PROJECT_PREFIX}}_admin_enqueue' );
+
+/**
+ * Custom theme functions below
+ * ========================================
+ */
+
+// Add your custom functions here.

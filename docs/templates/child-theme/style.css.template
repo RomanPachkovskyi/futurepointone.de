@@ -1,0 +1,15 @@
+/*
+Theme Name: {{PROJECT_NAME}}
+Theme URI: https://{{DOMAIN}}
+Description: Custom WordPress theme for {{PROJECT_NAME}} - Professional design by {{AUTHOR}}
+Author: {{AUTHOR}}
+Author URI: https://munas-print.de
+Template: {{PARENT_THEME}}
+Version: {{VERSION}}
+Text Domain: {{PROJECT_SLUG}}
+*/
+
+/*
+ * All custom styles are in assets/css/custom.css
+ * This file contains only theme header for WordPress
+ */

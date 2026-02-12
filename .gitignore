@@ -1,0 +1,68 @@
+# WordPress core
+wp/wp-admin/
+wp/wp-includes/
+wp/wp-*.php
+wp/index.php
+wp/xmlrpc.php
+wp/license.txt
+wp/readme.html
+!wp/wp-content/
+
+# Uploads and generated files
+wp/wp-content/uploads/
+wp/wp-content/cache/
+wp/wp-content/upgrade/
+wp/wp-content/backups/
+wp/wp-content/wflogs/
+wp/wp-content/et-cache/
+wp/wp-content/updraft/
+wp/wp-content/ai1wm-backups/
+wp/wp-content/languages/
+wp/wp-content/plugins/*
+!wp/wp-content/plugins/custom-*/
+!wp/wp-content/plugins/custom-*/**
+
+# Config and secrets
+wp/wp-config.php
+wp/.htaccess
+.env
+.env.*
+!.env.example
+
+# Redis drop-in
+wp/wp-content/object-cache.php
+
+# DB backups and logs
+backups/*.sql
+backups/*.sql.gz
+*.sql
+*.sql.gz
+*.log
+backups/
+logs/
+
+# Technical docs and local-only files
+/PROJECT.md
+/SERVER_RULES.md
+/docker-compose.yml
+/wp-config-local.php
+/wp-config-production.php
+/php.ini
+
+docs/archive/
+workspace/
+!workspace/README.md
+
+# Keep SEO/AI context files in root
+!/robots.txt
+!/llms.txt
+!/*-ai.txt
+wp/robots.txt
+
+# OS/IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo

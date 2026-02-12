@@ -1,0 +1,80 @@
+.pxl--progressbar {
+    @include transition(width 1.4s ease);
+    width: 0;
+    &.vertical {
+        @include transition(height 1.4s ease);
+        height: 0;
+    }
+}
+.pxl-progressbar-1 {
+    &.style-1 {
+        .pxl-progressbar--wrap {
+            height: 2px;
+            background-color: #BFBFBF;
+            .pxl--progressbar {
+                height: 2px;
+                background-color: $primary_color;
+                position: relative;
+            }
+        }
+        .pxl--title {
+            font-size: 16px;
+            margin-bottom: 6px;
+            font-weight: 400;
+            @extend .ft-theme-default;
+        }
+        .pxl--percentage {
+            color: $secondary_color;
+            @extend .ft-theme-default;
+            margin-bottom: 12px;
+        }
+        .pxl--item + .pxl--item {
+            margin-top: 31px;
+        }
+    }
+    &.style-2 {
+        .pxl-progressbar--wrap {
+            height: 6px;
+            background-color: transparent;
+            .pxl--progressbar {
+                height:1px;
+                background-color: $primary_color;;
+                position: relative;
+                position:relative;
+                &:before {
+                    position: absolute;
+                    content:'';
+                    top:-4px;
+                    right:0;
+                    width: 8px;
+                    height: 8px;
+                    background-color: $primary_color;
+                }
+                
+            }
+        }
+        .pxl--percentage {
+            position:absolute;
+            top: -38px;
+            right: 0;
+            @media (max-width: 767px){
+                top:-24px;
+            }
+        }
+        .pxl--title {
+            font-size: 18px;
+            margin-bottom: 16px;
+            font-weight: 400;
+        }
+        .pxl--percentage {
+            color: $primary_color;
+        }
+        .pxl--item + .pxl--item {
+            margin-top: 24px;
+        }
+    }
+}
+
+body.rtl {
+
+}
