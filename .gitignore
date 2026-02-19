@@ -49,7 +49,15 @@ logs/
 /wp-config-production.php
 /php.ini
 
-docs/archive/
+# Universal docs — local only per SOP v3.1
+docs/
+
+# Deploy artifacts (archives, SQL dumps)
+deploy/
+
+# Claude Code local config
+.claude/
+
 workspace/
 !workspace/README.md
 

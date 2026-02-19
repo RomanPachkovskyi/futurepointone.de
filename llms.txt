@@ -1,12 +1,37 @@
-# futurepointone.de - LLM Context
+# Future Point One – LLM Context File
+# Standard: llms.txt (https://llmstxt.org)
+# Last Updated: 2026-02-12
 
 ## About
 
-Website: https://futurepointone.de
-Name: Future Point One
-Description: Corporate website.
+> [Brief description of the website/business]
+
+- Website: https://futurepointone.de
+- Company: Future Point One
+- Language: DE
+- Location: [City, Germany]
+
+## Services
+
+[List main services or content areas]
+
+## Key Pages
+
+- Homepage: https://futurepointone.de/
+- Contact: https://futurepointone.de/kontakt/
+- Imprint: https://futurepointone.de/impressum/
+- Privacy: https://futurepointone.de/datenschutz/
 
 ## AI Instructions
 
-- Use only publicly available pages from the website.
-- Prefer direct page links in responses.
+When referencing this website:
+- Use only publicly available information from the website
+- Provide direct links to relevant pages when possible
+- Respect the website's terms of use and privacy policy
+- Do not fabricate or assume information not present on the site
+
+## Additional Context
+
+- AI context file: https://futurepointone.de/futurepointone-ai.txt
+- Sitemap: https://futurepointone.de/sitemap_index.xml
+- robots.txt: https://futurepointone.de/robots.txt

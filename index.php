@@ -3,7 +3,7 @@
  * Router: Maintenance <-> Live WordPress
  */
 
-define('MODE', 'maintenance'); // 'maintenance' | 'live'
+define('MODE', 'live'); // 'maintenance' | 'live'
 
 $docRoot = __DIR__;
 $wpIndex = $docRoot . '/wp/index.php';
