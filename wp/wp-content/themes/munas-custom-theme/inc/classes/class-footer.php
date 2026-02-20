@@ -8,7 +8,12 @@ if (!class_exists('Vintech_Footer')) {
         {
             if(is_singular('elementor_library')) return;
             
-            $footer_layout = (int)vintech()->get_opt('footer_layout');
+            if (is_404()) {
+                // Dedicated footer template for the 404 landing page.
+                $footer_layout = 6001;
+            } else {
+                $footer_layout = (int)vintech()->get_opt('footer_layout');
+            }
             
             if ($footer_layout <= 0 || !class_exists('Pxltheme_Core') || !is_callable( 'Elementor\Plugin::instance' )) {
                 get_template_part( 'template-parts/footer/default');

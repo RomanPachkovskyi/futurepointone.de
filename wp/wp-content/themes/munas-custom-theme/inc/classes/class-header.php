@@ -6,6 +6,11 @@ if (!class_exists('Vintech_Header')) {
     {
         public function getHeader()
         {
+            // Landing-style 404 page should render without a header.
+            if (is_404()) {
+                return;
+            }
+
             // Check if header should be hidden for this page
             $header_display = vintech()->get_page_opt('header_display', 'show');
             if ($header_display === 'hide' && !is_search()) {
