@@ -5,13 +5,12 @@
 $title_404 = vintech()->get_theme_opt('title_404');
 $des_404 = vintech()->get_theme_opt('des_404');
 $button_404 = vintech()->get_theme_opt('button_404');
-$img_404 = vintech()->get_opt('img_404', ['url' => get_template_directory_uri() . '/assets/img/404-image.webp', 'id' => '']);
 get_header();
 ?>
 <main id="pxl-content-main" class="pxl-error-inner" role="main">
     <section class="wrap-content-404 container">
         <div class="content row align-items-center">
-            <div class="col-12 col-lg-6">
+            <div class="col-12">
                 <h1 class="pxl-error-title wow fadeInUp">
                     <?php
                     if (!empty($title_404)) {
@@ -42,9 +41,6 @@ get_header();
                         ?>
                     </span>
                 </a>
-            </div>
-            <div class="pxl-error-image col-12 col-lg-6">
-                <img src="<?php echo esc_url($img_404['url']); ?>" alt="<?php echo esc_attr__('404 Fehlerseite', 'vintech'); ?>">
             </div>
         </div>
     </section>
