@@ -2,13 +2,14 @@
  * Custom styles for Future Point One.
  */
 
-/* CF7 submit button: remove auto-inserted <br> tags, fix line-height on mobile */
+/* CF7 submit button: remove auto-inserted <br> tags */
 .wpcf7-submit br {
     display: none;
 }
 
-@media (max-width: 768px) {
-    .pxl--btn-text {
-        line-height: 1.3em;
+/* CF7 submit button: fix line-height on mobile (overrides theme .btn-2-icons 42px) */
+@media (max-width: 767px) {
+    .wpcf7-submit.btn.btn-2-icons {
+        line-height: 1.3em !important;
     }
 }
