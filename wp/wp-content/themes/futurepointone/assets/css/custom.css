@@ -7,9 +7,12 @@
     display: none;
 }
 
-/* CF7 submit button: fix line-height on mobile (overrides theme .btn-2-icons 42px) */
+/* CF7 submit button: switch from line-height-based height to padding on mobile */
 @media (max-width: 767px) {
     .wpcf7-submit.btn.btn-2-icons {
         line-height: 1.3em !important;
+        padding-top: 12px !important;
+        padding-bottom: 12px !important;
+        height: auto !important;
     }
 }
