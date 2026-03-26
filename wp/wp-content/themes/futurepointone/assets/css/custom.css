@@ -1,3 +1,10 @@
 /**
  * Custom styles for Future Point One.
  */
+
+/* CF7 submit button: fix line-height on mobile */
+@media (max-width: 768px) {
+    .wpcf7-submit .pxl--btn-text {
+        line-height: 1.3em;
+    }
+}
